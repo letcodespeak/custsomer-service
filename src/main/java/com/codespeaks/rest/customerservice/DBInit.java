@@ -22,6 +22,8 @@ public class DBInit implements CommandLineRunner {
 	
 	@Override
 	public void run(String... args) throws Exception {
+		
+		 //Matt Zhang's account
 		   Customer  mattZhang = new Customer();
 		   mattZhang.setCustomerName("Matt Zhang");
 		   
@@ -31,25 +33,55 @@ public class DBInit implements CommandLineRunner {
 		   mattZhang.setPhoneNumber("+610452623758");
 		   mattZhang = customerRepository.save(mattZhang);
 		   
-		   Account esaver = new Account();
-		   esaver.setAccountNumber(10881061);
-		   esaver.setBalance(8000.00);
+		   Account esaverMZ = new Account();
+		   esaverMZ.setAccountNumber(10881061);
+		   esaverMZ.setBalance(8000.00);
 		   Date openingDate = Date.from(LocalDate.of(2016, 05, 16).atStartOfDay(ZoneId.systemDefault()).toInstant());
-		   esaver.setOpeningDate(openingDate);
-		   esaver.setCustomer(mattZhang);
-		   esaver.setAccountName("westpac esaver");
+		   esaverMZ.setOpeningDate(openingDate);
+		   esaverMZ.setCustomer(mattZhang);
+		   esaverMZ.setAccountName("westpac esaver");
 		   
-		   accountRepository.save(esaver);
+		   accountRepository.save(esaverMZ);
 		   
 		   
-		   Account choice = new Account();
-		   choice.setAccountNumber(10881069);
-		   choice.setBalance(12000.00);
-		   choice.setOpeningDate(openingDate);
-		   choice.setCustomer(mattZhang);
-		   choice.setAccountName("westpac choice");
+		   Account choiceMZ = new Account();
+		   choiceMZ.setAccountNumber(10881069);
+		   choiceMZ.setBalance(12000.00);
+		   choiceMZ.setOpeningDate(openingDate);
+		   choiceMZ.setCustomer(mattZhang);
+		   choiceMZ.setAccountName("westpac choice");
 		   
-		   accountRepository.save(choice);
+		   accountRepository.save(choiceMZ);
+		   
+
+			 //Andrew Davis's account
+		   Customer  andrewDavis = new Customer();
+		   andrewDavis.setCustomerName("Andrew Davis");
+		   
+		   andrewDavis.setDateofBirth(Date.from(LocalDate.of(1985, 03, 16).atStartOfDay(ZoneId.systemDefault()).toInstant()));
+		   andrewDavis.setPhoneNumber("+610452623798");
+		   andrewDavis = customerRepository.save(andrewDavis);
+		   
+		   Account esaverAD = new Account();
+		   esaverAD.setAccountNumber(10981061);
+		   esaverAD.setBalance(8000.00);
+		   esaverAD.setOpeningDate(Date.from(LocalDate.of(2016, 05, 16).atStartOfDay(ZoneId.systemDefault()).toInstant()));
+		   esaverAD.setCustomer(andrewDavis);
+		   esaverAD.setAccountName("westpac esaver");
+		   
+		   accountRepository.save(esaverAD);
+		   
+		   
+		   Account choiceAD = new Account();
+		   choiceAD.setAccountNumber(10881059);
+		   choiceAD.setBalance(12000.00);
+		   choiceAD.setOpeningDate(openingDate);
+		   choiceAD.setCustomer(andrewDavis);
+		   choiceAD.setAccountName("westpac choice");
+		   
+		   accountRepository.save(choiceAD);
+		   
+		   
 		   
 		   
 		   
