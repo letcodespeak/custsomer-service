@@ -44,13 +44,8 @@ public class AccountController {
 	
 	@GetMapping(value = "/customers/{customerId}/accounts") 
 	 public Page<Account> all (@PathVariable Integer customerId,Pageable pageable){ 
-              return accountRepository.findByCustomerId(customerId, pageable);
+              return accountRepository.findByCustomerCustomerId(customerId, pageable);
 	 } 
-
-	@GetMapping(value = "/customers/{customerId}") 
-	   public Customer findByCustomerId (@PathVariable Integer customerId){ 
-	         return customerRepository.findById(customerId).orElseThrow(() -> new ResourceNotFoundException("Customer [customerId="+customerId+"] can't be found"));
-	   }
 	
 	@DeleteMapping(value = "/customers/{customerId}/accounts/{accountId}")
 	public ResponseEntity<?> deleteCustomer(@PathVariable Integer customerId,@PathVariable Integer accountId){
