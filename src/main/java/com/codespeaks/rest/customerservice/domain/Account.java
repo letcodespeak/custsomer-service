@@ -1,7 +1,7 @@
 package com.codespeaks.rest.customerservice.domain;
 
 import java.io.Serializable;
-import java.util.Date;
+import java.time.LocalDate;
 
 import javax.persistence.Column;
 import javax.persistence.Entity;
@@ -31,7 +31,7 @@ public class Account implements Serializable {
 	private Double balance;
 	
 	@Column(name="OPENINGDATE")
-	private Date openingDate;
+	private LocalDate openingDate;
 	
     @ManyToOne(fetch = FetchType.LAZY, optional = false)
     @JoinColumn(name = "CUSTOMERID", nullable = false)
@@ -65,11 +65,11 @@ public class Account implements Serializable {
 		this.balance = balance;
 	}
 
-	public Date getOpeningDate() {
+	public LocalDate getOpeningDate() {
 		return openingDate;
 	}
 
-	public void setOpeningDate(Date openingDate) {
+	public void setOpeningDate(LocalDate openingDate) {
 		this.openingDate = openingDate;
 	}
 

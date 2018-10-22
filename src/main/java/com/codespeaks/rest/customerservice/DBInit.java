@@ -27,17 +27,17 @@ public class DBInit implements CommandLineRunner {
 		   Customer  mattZhang = new Customer();
 		   mattZhang.setCustomerName("Matt Zhang");
 		   
-		   Date dob = Date.from(LocalDate.of(1980, 03, 16).atStartOfDay(ZoneId.systemDefault()).toInstant());
+		   //Date dob = Date.from(LocalDate.of(1980, 03, 16).atStartOfDay(ZoneId.systemDefault()).toInstant());
 		   
-		   mattZhang.setDateofBirth(dob);
+		   mattZhang.setDateofBirth(LocalDate.of(1980, 03, 16));
 		   mattZhang.setPhoneNumber("+610452623758");
 		   mattZhang = customerRepository.save(mattZhang);
 		   
 		   Account esaverMZ = new Account();
 		   esaverMZ.setAccountNumber(10881061);
 		   esaverMZ.setBalance(8000.00);
-		   Date openingDate = Date.from(LocalDate.of(2016, 05, 16).atStartOfDay(ZoneId.systemDefault()).toInstant());
-		   esaverMZ.setOpeningDate(openingDate);
+		   //Date openingDate = Date.from(LocalDate.of(2016, 05, 16).atStartOfDay(ZoneId.systemDefault()).toInstant());
+		   esaverMZ.setOpeningDate(LocalDate.of(2016, 05, 16));
 		   esaverMZ.setCustomer(mattZhang);
 		   esaverMZ.setAccountName("westpac esaver");
 		   
@@ -47,7 +47,7 @@ public class DBInit implements CommandLineRunner {
 		   Account choiceMZ = new Account();
 		   choiceMZ.setAccountNumber(10881069);
 		   choiceMZ.setBalance(12000.00);
-		   choiceMZ.setOpeningDate(openingDate);
+		   choiceMZ.setOpeningDate(LocalDate.of(2016, 05, 16));
 		   choiceMZ.setCustomer(mattZhang);
 		   choiceMZ.setAccountName("westpac choice");
 		   
@@ -58,14 +58,14 @@ public class DBInit implements CommandLineRunner {
 		   Customer  andrewDavis = new Customer();
 		   andrewDavis.setCustomerName("Andrew Davis");
 		   
-		   andrewDavis.setDateofBirth(Date.from(LocalDate.of(1985, 03, 16).atStartOfDay(ZoneId.systemDefault()).toInstant()));
+		   andrewDavis.setDateofBirth(LocalDate.of(1985, 03, 16));
 		   andrewDavis.setPhoneNumber("+610452623798");
 		   andrewDavis = customerRepository.save(andrewDavis);
 		   
 		   Account esaverAD = new Account();
 		   esaverAD.setAccountNumber(10981061);
 		   esaverAD.setBalance(8000.00);
-		   esaverAD.setOpeningDate(Date.from(LocalDate.of(2016, 05, 16).atStartOfDay(ZoneId.systemDefault()).toInstant()));
+		   esaverAD.setOpeningDate(LocalDate.of(2016, 05, 16));
 		   esaverAD.setCustomer(andrewDavis);
 		   esaverAD.setAccountName("westpac esaver");
 		   
@@ -75,7 +75,7 @@ public class DBInit implements CommandLineRunner {
 		   Account choiceAD = new Account();
 		   choiceAD.setAccountNumber(10881059);
 		   choiceAD.setBalance(12000.00);
-		   choiceAD.setOpeningDate(openingDate);
+		   choiceAD.setOpeningDate(LocalDate.of(2016, 05, 16));
 		   choiceAD.setCustomer(andrewDavis);
 		   choiceAD.setAccountName("westpac choice");
 		   

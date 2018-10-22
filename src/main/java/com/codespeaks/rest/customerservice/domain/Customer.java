@@ -1,7 +1,7 @@
 package com.codespeaks.rest.customerservice.domain;
 
 import java.io.Serializable;
-import java.util.Date;
+import java.time.LocalDate;
 
 import javax.persistence.Column;
 import javax.persistence.Entity;
@@ -25,7 +25,7 @@ public class Customer implements Serializable{
 	private String customerName;
 	
 	@Column(name="DATEOFBIRTH" ,nullable=true)
-	private Date dateofBirth;
+	private LocalDate dateofBirth;
 	
 	@Column(name="PHONENUMBER")
 	private String phoneNumber;
@@ -47,11 +47,11 @@ public class Customer implements Serializable{
 		this.customerName = customerName;
 	}
 
-	public Date getDateofBirth() {
+	public LocalDate getDateofBirth() {
 		return dateofBirth;
 	}
 
-	public void setDateofBirth(Date dateofBirth) {
+	public void setDateofBirth(LocalDate dateofBirth) {
 		this.dateofBirth = dateofBirth;
 	}
 
