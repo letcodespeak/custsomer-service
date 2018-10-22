@@ -53,7 +53,7 @@ public class CustomerController {
 		customerRepository.delete(customer);
 		return ResponseEntity.ok().build();
 		}
-        ).orElseThrow(() -> new ResourceNotFoundException("Employee [customerId="+customerId+"] can't be found"));
+        ).orElseThrow(() -> new ResourceNotFoundException("Customer [customerId="+customerId+"] can't be found"));
 
 	}
 	
@@ -66,7 +66,7 @@ public class CustomerController {
 			customer.setPhoneNumber(newCustomer.getPhoneNumber());
 			customerRepository.save(customer);
 			return ResponseEntity.ok().build(); 
-		}).orElseThrow(() -> new ResourceNotFoundException("Employee [customerId="+customerId+"] can't be found"));
+		}).orElseThrow(() -> new ResourceNotFoundException("Customer [customerId="+customerId+"] can't be found"));
 		
 	}
 
