@@ -21,7 +21,7 @@ import com.fasterxml.jackson.annotation.JsonIgnore;
 public class Account implements Serializable {
 	
 	@Id
-	@Column(name="ACCOUNTNUMBER")
+	@Column(name="ACCOUNTNUMBER",updatable = false)
 	private Integer accountNumber;
 	
 	@Column(name="ACCOUNTNAME")

@@ -8,11 +8,7 @@ import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
-import javax.persistence.SequenceGenerator;
 import javax.persistence.Table;
-import javax.persistence.TemporalType;
-
-import org.springframework.data.jpa.repository.Temporal;
 
 @Table(name="CUSTOMER")
 @Entity
@@ -22,7 +18,7 @@ public class Customer implements Serializable{
 
 	@Id
 	@GeneratedValue(strategy=GenerationType.AUTO)
-	@Column(name="CUSTOMERID")
+	@Column(name="CUSTOMERID",updatable = false)
 	private Integer customerId;
 	
 	@Column(name="NAME")
