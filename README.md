@@ -9,3 +9,13 @@ Clone the [repository](https://gitlab.com/lihuicheung/customer-service.git) to l
 
 
 ## Call the RESTful services
+
+- [Get all customers](#get_customers)
+- [Get all accounts of one customer](#get_accounts)
+- [Create a customer](#create_customer)
+- [Create an account for one customer](#create_account)
+- [Get the new customer](#get_a_customer)
+- [Get the new account of the new customer](#get_accounts)
+- [Update the customer](#license)
+- [Update the account](#license)
+- [Delete the customer](#license)
