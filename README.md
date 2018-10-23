@@ -10,7 +10,7 @@ Clone the [repository](https://gitlab.com/lihuicheung/customer-service.git) to l
 
 ## Call the RESTful services
 
-- [Get all customers](#get_customers)
+- [Get all customers](#get_all_customers)
 - [Get all accounts of one customer](#get_accounts)
 - [Create a customer](#create_customer)
 - [Create an account for one customer](#create_account)
@@ -19,3 +19,6 @@ Clone the [repository](https://gitlab.com/lihuicheung/customer-service.git) to l
 - [Update the customer](#license)
 - [Update the account](#license)
 - [Delete the customer](#license)
+
+## get all customers
+Run `curl` command
