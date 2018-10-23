@@ -1,1 +1,2 @@
-RESTful customer service built with Spring boot 2.0.6 , JPA  and JDK 8.  It shows how to build the RESTful endpoint to manupulate with two entities Customer and Account which are connected via one-to-many relationship.
+a sample RESTful customer service built with Spring boot 2.0.6 , JPA  and JDK 8.  
+It shows how to build the RESTful endpoint to manupulate with two entities Customer and Account which are connected via one-to-many relationship.
