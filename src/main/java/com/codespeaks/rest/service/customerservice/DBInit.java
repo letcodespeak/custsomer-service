@@ -1,4 +1,4 @@
-package com.codespeaks.rest.customerservice;
+package com.codespeaks.rest.service.customerservice;
 
 import java.time.LocalDate;
 import java.time.ZoneId;
@@ -7,10 +7,10 @@ import java.util.Date;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.boot.CommandLineRunner;
 
-import com.codespeaks.rest.customerservice.domain.Account;
-import com.codespeaks.rest.customerservice.domain.Customer;
-import com.codespeaks.rest.customerservice.repository.AccountRepository;
-import com.codespeaks.rest.customerservice.repository.CustomerRepository;
+import com.codespeaks.rest.service.customerservice.domain.Account;
+import com.codespeaks.rest.service.customerservice.domain.Customer;
+import com.codespeaks.rest.service.customerservice.repository.AccountRepository;
+import com.codespeaks.rest.service.customerservice.repository.CustomerRepository;
 
 public class DBInit implements CommandLineRunner {
 

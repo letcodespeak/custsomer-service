@@ -1,4 +1,4 @@
-package com.codespeaks.rest.customerservice.domain;
+package com.codespeaks.rest.service.customerservice.domain;
 
 import java.io.Serializable;
 import java.time.LocalDate;

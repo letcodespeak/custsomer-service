@@ -1,4 +1,4 @@
-package com.codespeaks.rest.customerservice;
+package com.codespeaks.rest.service.customerservice;
 
 import org.springframework.boot.CommandLineRunner;
 import org.springframework.boot.SpringApplication;

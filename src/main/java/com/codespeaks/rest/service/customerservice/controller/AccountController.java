@@ -1,4 +1,4 @@
-package com.codespeaks.rest.customerservice.controller;
+package com.codespeaks.rest.service.customerservice.controller;
 
 import java.util.Optional;
 
@@ -16,11 +16,11 @@ import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.ResponseStatus;
 import org.springframework.web.bind.annotation.RestController;
 
-import com.codespeaks.rest.customerservice.domain.Account;
-import com.codespeaks.rest.customerservice.domain.Customer;
-import com.codespeaks.rest.customerservice.exception.ResourceNotFoundException;
-import com.codespeaks.rest.customerservice.repository.AccountRepository;
-import com.codespeaks.rest.customerservice.repository.CustomerRepository;
+import com.codespeaks.rest.service.customerservice.domain.Account;
+import com.codespeaks.rest.service.customerservice.domain.Customer;
+import com.codespeaks.rest.service.customerservice.exception.ResourceNotFoundException;
+import com.codespeaks.rest.service.customerservice.repository.AccountRepository;
+import com.codespeaks.rest.service.customerservice.repository.CustomerRepository;
 
 @RestController
 public class AccountController {

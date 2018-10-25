@@ -1,4 +1,4 @@
-package com.codespeaks.rest.customerservice.exception;
+package com.codespeaks.rest.service.customerservice.exception;
 
 import org.springframework.http.HttpStatus;
 import org.springframework.web.bind.annotation.ResponseStatus;
