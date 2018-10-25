@@ -58,14 +58,14 @@ public class CustomerController {
 	}
 	
 	@PutMapping(value = "/customers/{customerId}")
-	public ResponseEntity<?> updateCustomer(@PathVariable Integer customerId,@RequestBody Customer newCustomer){
+	public ResponseEntity<Customer> updateCustomer(@PathVariable Integer customerId,@RequestBody Customer newCustomer){
 		
 		return customerRepository.findById(customerId).map(customer -> {
 			customer.setCustomerName(newCustomer.getCustomerName());
 			customer.setDateofBirth(newCustomer.getDateofBirth());
 			customer.setPhoneNumber(newCustomer.getPhoneNumber());
 			customerRepository.save(customer);
-			return ResponseEntity.ok().build(); 
+			return ResponseEntity.ok(customer).build(); 
 		}).orElseThrow(() -> new ResourceNotFoundException("Customer [customerId="+customerId+"] can't be found"));
 		
 	}
