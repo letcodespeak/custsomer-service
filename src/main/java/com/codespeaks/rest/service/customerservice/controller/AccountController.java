@@ -48,7 +48,7 @@ public class AccountController {
 	 } 
 	
 	@DeleteMapping(value = "/customers/{customerId}/accounts/{accountId}")
-	public ResponseEntity<?> deleteCustomer(@PathVariable Integer customerId,@PathVariable Integer accountId){
+	public ResponseEntity<?> deleteAccount(@PathVariable Integer customerId,@PathVariable Integer accountId){
 
 		if (!customerRepository.existsById(customerId)) {
 			throw new ResourceNotFoundException("Customer [customerId="+customerId+"] can't be found");
@@ -64,14 +64,14 @@ public class AccountController {
 	}
 	
 	@PutMapping(value = "/customers/{customerId}/accounts/{accountId}")
-	public ResponseEntity<?> updateCustomer(@PathVariable Integer customerId,@PathVariable Integer accountId,@RequestBody Account newAccount){
+	public ResponseEntity<Account> updateAccount(@PathVariable Integer customerId,@PathVariable Integer accountId,@RequestBody Account newAccount){
 
 		Customer customer = customerRepository.findById(customerId).orElseThrow(() -> new ResourceNotFoundException("Customer [customerId="+customerId+"] can't be found"));
 		
 		return accountRepository.findById(accountId).map(account ->{
 			   newAccount.setCustomer(customer);
 			   accountRepository.save(newAccount);
-			   return ResponseEntity.ok().build();
+			   return ResponseEntity.ok(newAccount);
 		       }).orElseThrow(() -> new ResourceNotFoundException("Account [accountId="+accountId+"] can't be found"));
 
 		
