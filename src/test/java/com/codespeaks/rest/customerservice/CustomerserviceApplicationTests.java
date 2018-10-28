@@ -1,4 +1,4 @@
-package com.codespeaks.rest.customerservice.customerservice;
+package com.codespeaks.rest.customerservice;
 
 import org.junit.Test;
 import org.junit.runner.RunWith;
