@@ -26,9 +26,6 @@ public class CustomerController {
 	@Autowired
 	private CustomerRepository customerRepository;
 	
-	@Autowired
-	private AccountRepository accountRepository;
-	
 	@PostMapping(value = "/customers")
 	@ResponseStatus(code = HttpStatus.CREATED)
 	public Customer save(@RequestBody Customer customer) {
