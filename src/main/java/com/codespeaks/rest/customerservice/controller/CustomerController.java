@@ -16,7 +16,6 @@ import org.springframework.web.bind.annotation.RestController;
 
 import com.codespeaks.rest.customerservice.domain.Customer;
 import com.codespeaks.rest.customerservice.exception.ResourceNotFoundException;
-import com.codespeaks.rest.customerservice.repository.AccountRepository;
 import com.codespeaks.rest.customerservice.repository.CustomerRepository;
 
 
