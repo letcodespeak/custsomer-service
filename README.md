@@ -185,7 +185,7 @@ $ curl -s -H "Content-Type: application/json;accept: application/json" -X PUT -d
 }
 
 ```
-### Update the new customer Iris
+### Update the account of customer Iris
 ```
 $ curl -s -H "Content-Type: application/json;accept: application/json" -X PUT -d '{"accountNumber": 30981069,"accountName": "silver plus","balance": 12000,"openingDate": "2016-05-16"}' http://localhost:8088/restapi/customers/3/accounts/30981069 | json_pp
 {
