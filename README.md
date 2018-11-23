@@ -21,6 +21,7 @@ Clone the [repository](https://gitlab.com/lihuicheung/customer-service.git) to l
 - [Delete the customer](#license)
 
 ## get all customers
+```
 $ curl -s -G http://localhost:8088/restapi/customers | json_pp
 {
    "totalElements" : 4,
@@ -72,3 +73,4 @@ $ curl -s -G http://localhost:8088/restapi/customers | json_pp
    "last" : true,
    "first" : true
 }
+```
