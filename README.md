@@ -21,4 +21,54 @@ Clone the [repository](https://gitlab.com/lihuicheung/customer-service.git) to l
 - [Delete the customer](#license)
 
 ## get all customers
-Run `curl` command
+$ curl -s -G http://localhost:8088/restapi/customers | json_pp
+{
+   "totalElements" : 4,
+   "number" : 0,
+   "numberOfElements" : 4,
+   "pageable" : {
+      "offset" : 0,
+      "sort" : {
+         "sorted" : false,
+         "unsorted" : true
+      },
+      "pageSize" : 20,
+      "pageNumber" : 0,
+      "paged" : true,
+      "unpaged" : false
+   },
+   "size" : 20,
+   "content" : [
+      {
+         "dateofBirth" : "1980-03-16",
+         "customerId" : 1,
+         "customerName" : "Matt Zhang",
+         "phoneNumber" : "+610452623758"
+      },
+      {
+         "dateofBirth" : "1985-03-16",
+         "phoneNumber" : "+610452623798",
+         "customerName" : "Andrew Davis",
+         "customerId" : 2
+      },
+      {
+         "phoneNumber" : "+610452623738",
+         "customerId" : 6,
+         "customerName" : "Iris Zhang",
+         "dateofBirth" : "1985-03-16"
+      },
+      {
+         "dateofBirth" : "1985-03-16",
+         "customerName" : "Iris Zhang",
+         "customerId" : 7,
+         "phoneNumber" : "+610452623738"
+      }
+   ],
+   "sort" : {
+      "sorted" : false,
+      "unsorted" : true
+   },
+   "totalPages" : 1,
+   "last" : true,
+   "first" : true
+}
