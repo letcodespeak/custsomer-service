@@ -8,19 +8,21 @@ It shows how to build the RESTful endpoint to manupulate with two entities Custo
 Clone the [repository](https://gitlab.com/lihuicheung/customer-service.git) to local. In `customer-service` folder, run `mvnw spring-boot:run` to start the application.
 
 
-## Call the RESTful services
+## The RESTful services
 
-- [Get all customers](#get_all_customers)
-- [Get all accounts of one customer](#get_accounts)
-- [Create a customer](#create_customer)
-- [Create an account for one customer](#create_account)
-- [Get the new customer](#get_a_customer)
-- [Get the new account of the new customer](#get_accounts)
-- [Update the customer](#license)
-- [Update the account](#license)
-- [Delete the customer](#license)
+- /customers HTTP Get # Get all customers
+- /customers HTTP Post # Create a new customer
+- /customers/{customerId} HTTP Get # Get a customoer
+- /customers/{customerId} HTTP Delete # Delete a customer
+- /customers/{customerId} HTTP Put # Update an existing customer
+- /customers/{customerId}/accounts HTTP Post #Create an account for a customer
+- /customers/{customerId}/accounts HTTP Get #Get accounts from a customer
+- /customers/{customerId}/accounts/{accountId} HTTP Delete # Delete an account from a customer
+- /customers/{customerId}/accounts/{accountId} HTTP Put # Update an account from a customer
 
-## Find all customers
+## RESTful service examples
+
+### Find all customers
 ```
 $ curl -s -G http://localhost:8088/restapi/customers | json_pp
 {
@@ -64,7 +66,7 @@ $ curl -s -G http://localhost:8088/restapi/customers | json_pp
 
 ```
 
-## Find all customers with sorting
+### Find all customers with sorting
 ```
 $ curl -s -G http://localhost:8088/restapi/customers?sort=customerId,desc | json_pp
 {
@@ -108,7 +110,7 @@ $ curl -s -G http://localhost:8088/restapi/customers?sort=customerId,desc | json
 
 
 ```
-## Find all accounts of one customer
+### Find all accounts of one customer
 ```
 $  curl -s -G http://localhost:8088/restapi/customers/1/accounts | json_pp
 {
@@ -151,7 +153,7 @@ $  curl -s -G http://localhost:8088/restapi/customers/1/accounts | json_pp
 }
 
 ```
-## Add a new customer Iris
+### Add a new customer Iris
 ```
 $ curl -s -H "Content-Type: application/json;accept: application/json" -X POST -d '{"customerName": "Iris Zhang","dateofBirth": "1985-03-16","phoneNumber": "+610452623738"}' http://localhost:8088/restapi/customers/ | json_pp
 {
@@ -172,7 +174,7 @@ $ curl -s -H "Content-Type: application/json;accept: application/json" -X POST -
    "openingDate" : "2016-05-16"
 }
 ```
-## Update the new customer Iris
+### Update the new customer Iris
 ```
 $ curl -s -H "Content-Type: application/json;accept: application/json" -X PUT -d '{"customerName": "Iris Wong","dateofBirth": "1985-03-16","phoneNumber": "+610452623738"}' http://localhost:8088/restapi/customers/3 | json_pp
 {
@@ -183,7 +185,7 @@ $ curl -s -H "Content-Type: application/json;accept: application/json" -X PUT -d
 }
 
 ```
-## Update the new customer Iris
+### Update the new customer Iris
 ```
 $ curl -s -H "Content-Type: application/json;accept: application/json" -X PUT -d '{"accountNumber": 30981069,"accountName": "silver plus","balance": 12000,"openingDate": "2016-05-16"}' http://localhost:8088/restapi/customers/3/accounts/30981069 | json_pp
 {
@@ -194,7 +196,7 @@ $ curl -s -H "Content-Type: application/json;accept: application/json" -X PUT -d
 }
 
 ```
-## Delete the customer Iris and all linked accounts
+### Delete the customer Iris and all linked accounts
 ```
 $ curl -s -i -H "Content-Type: application/json;accept: application/json" -X DELETE  http://localhost:8088/restapi/customers/3/
 HTTP/1.1 200
