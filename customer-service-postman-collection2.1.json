@@ -1,0 +1,242 @@
+{
+	"info": {
+		"_postman_id": "7bafbbbc-92df-c0ab-9213-c91fc157853a",
+		"name": "customer-service",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
+	},
+	"item": [
+		{
+			"name": "Find all customers",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": ""
+				},
+				"url": {
+					"raw": "http://localhost:8088/restapi/customers",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8088",
+					"path": [
+						"restapi",
+						"customers"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Find accounts of customer Matt Zhang(customerId=1)",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": ""
+				},
+				"url": {
+					"raw": "http://localhost:8088/restapi/customers/1/accounts",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8088",
+					"path": [
+						"restapi",
+						"customers",
+						"1",
+						"accounts"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Find all customers with pagination",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": ""
+				},
+				"url": {
+					"raw": "http://localhost:8088/restapi/customers?page=0&size=1&sort=customerName,asc",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8088",
+					"path": [
+						"restapi",
+						"customers"
+					],
+					"query": [
+						{
+							"key": "page",
+							"value": "0"
+						},
+						{
+							"key": "size",
+							"value": "1"
+						},
+						{
+							"key": "sort",
+							"value": "customerName,asc"
+						}
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "add an account of customer Iris",
+			"request": {
+				"method": "POST",
+				"header": [
+					{
+						"key": "Content-Type",
+						"value": "application/json"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n\t\"accountNumber\": 30981069,\n\t\"accountName\": \"gold plus\",\n\t\"balance\": 12000,\n\t\"openingDate\": \"2016-05-16\"\n}"
+				},
+				"url": {
+					"raw": "http://localhost:8088/restapi/customers/3/accounts",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8088",
+					"path": [
+						"restapi",
+						"customers",
+						"3",
+						"accounts"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "add a new customer Iris",
+			"request": {
+				"method": "POST",
+				"header": [
+					{
+						"key": "Content-Type",
+						"value": "application/json"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n\t\"customerName\": \"Iris Zhang\",\n\t\"dateofBirth\": \"1985-03-16\",\n\t\"phoneNumber\": \"+610452623738\"\n}"
+				},
+				"url": {
+					"raw": "http://localhost:8088/customers/",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8088",
+					"path": [
+						"customers",
+						""
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "update the new customer Iris",
+			"request": {
+				"method": "PUT",
+				"header": [
+					{
+						"key": "Content-Type",
+						"value": "application/json"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n\t\"customerName\": \"Iris Wong\",\n\t\"dateofBirth\": \"1985-03-16\",\n\t\"phoneNumber\": \"+610452623738\"\n}"
+				},
+				"url": {
+					"raw": "http://localhost:8088/restapi/customers/3",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8088",
+					"path": [
+						"restapi",
+						"customers",
+						"3"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "delete the new customer Iris and all accounts",
+			"request": {
+				"method": "DELETE",
+				"header": [],
+				"body": {},
+				"url": {
+					"raw": "http://localhost:8088/restapi/customers/3/",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8088",
+					"path": [
+						"restapi",
+						"customers",
+						"3",
+						""
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "update the new account of customer Iris",
+			"request": {
+				"method": "PUT",
+				"header": [
+					{
+						"key": "Content-Type",
+						"value": "application/json"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n\t\"accountNumber\": 30981069,\n\t\"accountName\": \"silver plus\",\n\t\"balance\": 12000,\n\t\"openingDate\": \"2016-05-16\"\n}"
+				},
+				"url": {
+					"raw": "http://localhost:8088/restapi/customers/3/accounts/30981069",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8088",
+					"path": [
+						"restapi",
+						"customers",
+						"3",
+						"accounts",
+						"30981069"
+					]
+				}
+			},
+			"response": []
+		}
+	]
+}
